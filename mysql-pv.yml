@@ -10,7 +10,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: mysql-storage
   local:
-    path: /var/lib/mysql
+    path: /var
   nodeAffinity:
     required:
       nodeSelectorTerms:
