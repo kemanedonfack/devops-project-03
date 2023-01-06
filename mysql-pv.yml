@@ -9,14 +9,5 @@ spec:
     storage: 500Mi
   persistentVolumeReclaimPolicy: Retain
   storageClassName: mysql-storage
-  local:
-    path: /var/lib/mysql
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-      - matchExpressions:
-        - key: kubernetes.io/hostname
-          operator: In
-          values:
-          - node01
- 
+  hostPath:
+    path: "/mnt/data"
