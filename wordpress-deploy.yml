@@ -24,7 +24,10 @@ spec:
         - name: WORDPRESS_DB_HOST
           value: mysqldb
         - name: WORDPRESS_DB_PASSWORD
-          value: kemane
+          valueFrom :
+            secretKeyRef :
+              name : mysql-secrets
+              key :  password
         volumeMounts:
           - name: wordpress-volume
             mountPath: /var/www/html
