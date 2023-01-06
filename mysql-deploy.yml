@@ -28,7 +28,7 @@ spec:
               key :  password
         volumeMounts:
           - name: mysql-volume
-            mountPath: /var
+            mountPath: /var/lib/mysql
       volumes:
         - name: mysql-volume
           persistentVolumeClaim:
