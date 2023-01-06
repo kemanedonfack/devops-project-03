@@ -22,9 +22,22 @@ spec:
         - containerPort: 80
         env:
         - name: WORDPRESS_DB_HOST
-          value: mysqldb
+          valueFrom :
+            secretKeyRef :
+              name : mysql-secrets
+              key :  hostname
         - name: WORDPRESS_DB_PASSWORD
-          value: kemane
+          valueFrom :
+            secretKeyRef :
+              name : mysql-secrets
+              key :  password
+        volumeMounts:
+          - name: wordpress-volume
+            mountPath: /var/www/html
+      volumes:
+        - name: wordpress-volume
+          persistentVolumeClaim:
+            claimName: wordpress-pvc
 
 ---
 
