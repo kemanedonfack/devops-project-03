@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+
+  mysqldb:
+    image: mysql:5.7
+    ports:
+     - 3306:3306
+    environment:
+      MYSQL_PASSWORD: kemane
+      MYSQL_ROOT_PASSWORD: kemane
+      MYSQL_DATABASE: db_wordpress
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  wordpress:
+   image: wordpress:4.8-apache
+   ports:
+    - 80:80
+   links:
+    - mysqldb
+   environment:
+     WORDPRESS_DB_HOST: mysqldb:3306
+     WORDPRESS_DB_PASSWORD: kemane
+   volumes:
+     - wordpress-data:/var/wwww/html
+
+volumes:
+  mysql-data:
+  wordpress-data:
