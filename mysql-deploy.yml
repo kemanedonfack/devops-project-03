@@ -22,9 +22,10 @@ spec:
         - containerPort: 3306
         env:
         - name: MYSQL_ROOT_PASSWORD
-          value: kemane
-        - name: MYSQL_DATABASE
-          value: db_wordpress
+          valueFrom :
+            secretKeyRef :
+              name : mysql-secrets
+              key :  password
 
 ---
 
