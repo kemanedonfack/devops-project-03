@@ -10,4 +10,4 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: wordpress-storage
   hostPath:
-    path: "/mnt/data"
+    path: "/mnt/wordpress-data"

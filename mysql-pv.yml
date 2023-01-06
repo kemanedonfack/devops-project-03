@@ -10,4 +10,4 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: mysql-storage
   hostPath:
-    path: "/mnt/data"
+    path: "/mnt/mysql-data"
