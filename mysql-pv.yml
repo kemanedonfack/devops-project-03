@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: PersistenVolume
+metadata:
+  name: mysql-pv
+spec:
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+    storage: 500Mi
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: mysql-storage
+  ressources: 
+    requests:
+      storage: 500Mi
+  local:
+    path: /var/lib/mysql
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - node01
+ 
