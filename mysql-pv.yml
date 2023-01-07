@@ -11,3 +11,11 @@ spec:
   storageClassName: mysql-storage
   hostPath:
     path: "/mnt/mysql-data"
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - controlplane

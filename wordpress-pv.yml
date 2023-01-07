@@ -11,3 +11,11 @@ spec:
   storageClassName: wordpress-storage
   hostPath:
     path: "/mnt/wordpress-data"
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - controlplane
