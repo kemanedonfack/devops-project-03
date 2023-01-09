@@ -1,5 +1,4 @@
 # devops-project-03
 Deployment of wordpress application on kubernetes cluster
 
-
-![WordPress Deployment on Kubernetes Cluster](https://user-images.githubusercontent.com/70517765/211343852-0f54f8d8-d5cf-4559-9c05-7230db0dbe20.png)
+![WordPress Deployment on Kubernetes Cluster](https://user-images.githubusercontent.com/70517765/211344456-8129b0e0-4a0a-4680-8a14-f18fe39b467c.png)
