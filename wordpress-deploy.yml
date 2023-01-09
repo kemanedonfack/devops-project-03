@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: wordpress-deploy
+  namespace: production
   labels:
    app: wordpress-app
 spec:
@@ -42,6 +43,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: wordpress
+  namespace: production
   labels:
     name: wordpress-service
 spec:
