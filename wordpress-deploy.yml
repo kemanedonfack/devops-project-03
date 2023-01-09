@@ -47,10 +47,10 @@ metadata:
   labels:
     name: wordpress-service
 spec:
-#  type: NodePort
+  type: NodePort
   ports:
     - port: 80
       targetPort: 80
-#      nodePort: 30005
+      nodePort: 30005
   selector:
     app: wordpress-app
