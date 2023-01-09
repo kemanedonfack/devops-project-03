@@ -6,7 +6,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: "test.wordpress.com"
+  - host: 
     http:
       paths:
         - pathType: Prefix
